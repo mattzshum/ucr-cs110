@@ -1,15 +1,17 @@
 //game status element
 const statusDisplay = document.querySelector('.display_player');
 //track the current player
-let currentPlayer = "x";
+let currentPlayer = "X";
 //track played ceclls and validate game state
 let gameState = ["", "", "", "", "", "", "", "", ""];
+let gameActive = true;
 
 //endgame messages
 const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 
+//these are the cases in which occupancies of the gameState determine if somebody has won
 const winningConditions = [
     [0,1,2],
     [3,4,5],
@@ -22,7 +24,10 @@ const winningConditions = [
 ];
 
 statusDisplay.innerHTML = currentPlayerTurn();
-function handleCellPlayed(){}
+function handleCellPlayed(clickedEvent, clickedEventIndex){
+    gameState[clickedEventIndex] = currentPlayer;
+    clickedEvent.innerHTML = currentPlayer; //change the UI to reflect player has selected this span
+}
 function handlePlayerChange(){
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     statusDisplay.innerHTML = currentPlayerTurn();
@@ -55,8 +60,25 @@ function handleResultValidation(){
     }
     handlePlayerChange();
 }
-function handleCellClick(){}
-function handleRestartGame(){}
+function handleCellClick(clickedEvent){
+    //save the clicked html element
+    const clickedEvent = clickedEvent.target;
+    const clickedEventIndex = parseInt(clickedEvent.getAttribute('cell-index'));
+
+    if(gameState[clickedEventIndex] != "" || !gameActive){
+        return;
+    }
+
+    handleCellPlayed(clickedEvent, clickedEventIndex);
+    handleResultValidation();
+}
+function handleRestartGame(){
+    gameActive = true;
+    currentPlayer = 'X';
+    gameState = ["", "", "", "", "", "", "", "", ""];
+    statusDisplay.innerHTML('.xo')
+                 .forEach(span => span.innerHTML="");
+}
 
 
 document.querySelectorAll('.xo').forEach(cell => cell.addEventListener('click', handleCellClick));
