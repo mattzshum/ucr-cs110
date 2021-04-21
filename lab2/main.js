@@ -23,6 +23,7 @@ const winningConditions = [
     [2,4,6]
 ];
 
+// document.getElementsByClassName('display_player').innerHTML = currentPlayerTurn();
 statusDisplay.innerHTML = currentPlayerTurn();
 function handleCellPlayed(clickedEvent, clickedEventIndex){
     gameState[clickedEventIndex] = currentPlayer;
@@ -76,8 +77,8 @@ function handleRestartGame(){
     gameActive = true;
     currentPlayer = 'X';
     gameState = ["", "", "", "", "", "", "", "", ""];
-    statusDisplay.innerHTML('.xo')
-                 .forEach(span => span.innerHTML="");
+    document.innerHTML('.xo')
+            .forEach(span => span.innerHTML="");
 }
 
 
