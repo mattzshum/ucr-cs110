@@ -67,23 +67,49 @@ function fetchTweets(){
         console.log(tweet);
         // dict[tweet.user.id] = tweet;
         dict[tweet.id] = tweet;
-        tweetContainer.innerHTML += `<div class="tweetBlock">
-        <div class="d-flex">
-          <img src="${tweet.user.profile_image_url}" alt="Avatar" class="avatar">
-          <div class="nextToAvatar d-flex flex-column">
-            <div class="twoLine d-flex">
-              <p><b>${tweet.user.name}</b></p>
-              <p class="tweetInfo">@${tweet.user.screen_name} ${date(tweet.created_at)}</p>  
-            </div>
-            <p>${tweet.text}</p>
-          </div>
-        </div>
-      </div>`
-      });
       // for (let i = 0; i < 10; i++) {
       // document.getElementById('tweetInfo').innerText= "@" + data.statuses[i].user.screen_name;
       // // console.log(data.statuses[i].user.screen_name);
       // }
+      })
+
+      let items = Object.keys(dict).map(function(key) {
+        return [key, dict[key]];
+      });
+
+      items.sort(function(first, second) {
+        // console.log("first " + first[1].created_at);
+        // console.log("second " + second[1].created_at);
+        if (first[1].created_at < second[1].created_at) return 1;
+        if (first[1].created_at > second[1].created_at) return -1;
+
+        return 0;
+      });
+
+      console.log(items);
+      return items;
+    })
+    .then(items => {
+      // console.log(items);
+
+      tweetContainer.innerHTML = "";
+
+      items.map(tweet => {
+        tweetContainer.innerHTML += `<div class="tweetBlock">
+        <div class="d-flex">
+          <img src="${tweet[1].user.profile_image_url}" alt="Avatar" class="avatar">
+          <div class="nextToAvatar d-flex flex-column">
+            <div class="twoLine d-flex">
+              <p><b>${tweet[1].user.name}</b></p>
+              <p class="tweetInfo">@${tweet[1].user.screen_name} ${date(tweet[1].created_at)}</p>  
+            </div>
+            <p>${tweet[1].text}</p>
+          </div>
+        </div>
+      </div>`;
+      })
+
+      
     })
     .catch(err => {
       // error catching
