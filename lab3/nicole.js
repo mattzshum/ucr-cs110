@@ -1,18 +1,18 @@
 var timer = new IntervalTimer(fetchTweets, 5000);
-const url = "http://ec2-54-219-224-129.us-west-1.compute.amazonaws.com:2000/feed/random?q=weather";
+// const url = "http://ec2-54-219-224-129.us-west-1.compute.amazonaws.com:2000/feed/random?q=weather";
 const tweetContainer = document.getElementById('contentCenter');
 let dict = {};
 
 const pauseUnpause = clickedButton => {
   let currText = document.getElementById("timer-button").innerHTML;
-  if (currText == "resume feed") {
+  if (currText == `<span class="fas fa-play" aria-hidden="true"></span>`) {
       timer.resume();
-      document.getElementById("timer-button").innerHTML = "pause feed";
+      document.getElementById("timer-button").innerHTML = `<span class="fas fa-pause" aria-hidden="true"></span>`;
       console.log("success-1");
   }
-  else if (currText == "pause feed") {
+  else if (currText == `<span class="fas fa-pause" aria-hidden="true"></span>`) {
       timer.pause();
-      document.getElementById("timer-button").innerHTML = "resume feed";
+      document.getElementById("timer-button").innerHTML = `<span class="fas fa-play" aria-hidden="true"></span>`;
       console.log("success-2");
   }
   else {
@@ -21,8 +21,6 @@ const pauseUnpause = clickedButton => {
   }
   console.log(currText);
 }
-
-
 
 const date = (given) => {
   let t = new Date(given);
@@ -60,37 +58,41 @@ const date = (given) => {
 }
 
 function fetchTweets(){
-fetch(url)
-  .then(res => res.json())
-  .then(data => {
-    data.statuses.map(tweet => {
-      console.log(tweet);
-      dict[tweet.user.id] = tweet;
-      tweetContainer.innerHTML += `<div class="tweetBlock">
-      <div class="d-flex">
-        <img src="${tweet.user.profile_image_url}" alt="Avatar" class="avatar">
-        <div class="nextToAvatar d-flex flex-column">
-          <div class="twoLine d-flex">
-            <p><b>${tweet.user.name}</b></p>
-            <p class="tweetInfo">@${tweet.user.screen_name} ${date(tweet.created_at)}</p>  
+  const url = "http://ec2-54-219-224-129.us-west-1.compute.amazonaws.com:2000/feed/random?q=weather";
+
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      data.statuses.map(tweet => {
+        console.log(tweet);
+        // dict[tweet.user.id] = tweet;
+        dict[tweet.id] = tweet;
+        tweetContainer.innerHTML += `<div class="tweetBlock">
+        <div class="d-flex">
+          <img src="${tweet.user.profile_image_url}" alt="Avatar" class="avatar">
+          <div class="nextToAvatar d-flex flex-column">
+            <div class="twoLine d-flex">
+              <p><b>${tweet.user.name}</b></p>
+              <p class="tweetInfo">@${tweet.user.screen_name} ${date(tweet.created_at)}</p>  
+            </div>
+            <p>${tweet.text}</p>
           </div>
-          <p>${tweet.text}</p>
         </div>
-      </div>
-    </div>`
-    });
-    // for (let i = 0; i < 10; i++) {
-    // document.getElementById('tweetInfo').innerText= "@" + data.statuses[i].user.screen_name;
-    // // console.log(data.statuses[i].user.screen_name);
-    // }
-  })
-  .catch(err => {
-    // error catching
-    console.log(err);
+      </div>`
+      });
+      // for (let i = 0; i < 10; i++) {
+      // document.getElementById('tweetInfo').innerText= "@" + data.statuses[i].user.screen_name;
+      // // console.log(data.statuses[i].user.screen_name);
+      // }
+    })
+    .catch(err => {
+      // error catching
+      console.log(err);
   })
 }
 
 function IntervalTimer(callback, interval) {
+  fetchTweets();
   var timerId, startTime, remaining = 0;
   var state = 2; //start on resumed
   //0=idle
@@ -125,3 +127,16 @@ function IntervalTimer(callback, interval) {
   };
 
 }
+
+// const search = (str) => {
+
+// }
+
+// var searchInput = document.getElementById("searchBar");
+
+// searchInput.addEventListener("keyup", function(event)) {
+//   if (event.keyCode === 13) {
+//     event.preventDefault();
+//     search()
+//   }
+// }
