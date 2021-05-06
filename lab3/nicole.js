@@ -22,6 +22,38 @@ const pauseUnpause = clickedButton => {
   console.log(currText);
 }
 
+let searchString = "" // here we use a global variable
+
+const handleSearch = event => {
+    searchString = event.target.value.trim().toLowerCase();
+    // you may want to update the displayed HTML here too
+    console.log(searchString);
+    refreshPage();
+}
+document.getElementById("searchBar").addEventListener("input", handleSearch)
+
+function refreshPage(){
+  while(tweetContainer.firstChild){
+    tweetContainer.removeChild(tweetContainer.firstChild);
+  }
+  for (const [key, value] of Object.entries(dict)){
+    if(value.text.includes(searchString)){
+        tweetContainer.innerHTML += `<div class="tweetBlock">
+        <div class="d-flex">
+          <img src="${value.user.profile_image_url}" alt="Avatar" class="avatar">
+          <div class="nextToAvatar d-flex flex-column">
+            <div class="twoLine d-flex">
+              <p><b>${value.user.name}</b></p>
+              <p class="tweetInfo">@${value.user.screen_name} ${date(value.created_at)}</p>  
+            </div>
+            <p>${value.text}</p>
+          </div>
+        </div>
+      </div>`
+    }
+  }
+}
+
 const date = (given) => {
   let t = new Date(given);
   let month = t.getMonth();
@@ -65,12 +97,7 @@ function fetchTweets(){
     .then(data => {
       data.statuses.map(tweet => {
         console.log(tweet);
-        // dict[tweet.user.id] = tweet;
         dict[tweet.id] = tweet;
-      // for (let i = 0; i < 10; i++) {
-      // document.getElementById('tweetInfo').innerText= "@" + data.statuses[i].user.screen_name;
-      // // console.log(data.statuses[i].user.screen_name);
-      // }
       })
 
       let items = Object.keys(dict).map(function(key) {
@@ -78,8 +105,6 @@ function fetchTweets(){
       });
 
       items.sort(function(first, second) {
-        // console.log("first " + first[1].created_at);
-        // console.log("second " + second[1].created_at);
         if (first[1].created_at < second[1].created_at) return 1;
         if (first[1].created_at > second[1].created_at) return -1;
 
@@ -116,6 +141,18 @@ function fetchTweets(){
       console.log(err);
   })
 }
+
+function tweetContains(tweet){
+  /*
+  function takes tweet object as input. if tweet contains searchString, return true, meaning that the tweet SHOULD be displayed
+  */
+ console.log("filtering...")
+  if (tweet.text.includes(searchString)){
+    return true;
+  }
+  return false;
+}
+
 
 function IntervalTimer(callback, interval) {
   fetchTweets();
