@@ -16,4 +16,4 @@ The page displays 10 initial tweets as a starting point to view the main fetch i
 
 ***
 
-> Accounts with outdated profile picture links will not show up but instead display its alt="Avatar"
+> Accounts with outdated profile picture links will not show a photo but instead display its alt="Avatar"
