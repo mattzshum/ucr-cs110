@@ -95,6 +95,27 @@ a.nav-link:hover {
   max-width: 560px;
 }
 
+.search {
+  padding: 10px;
+}
+
+.fa-search {
+  padding: 5px;
+}
+
+#searchBar {
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  padding: 5px;
+  padding-left: 15px;
+  width: 300px;
+}
+
+#timer-button {
+  margin-left: 10px;
+}
+
 #contentRight {
   max-width: 290px;
   padding: 20px;

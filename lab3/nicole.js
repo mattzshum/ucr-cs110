@@ -46,7 +46,7 @@ fetch(url)
       dict[tweet.user.id] = tweet;
       tweetContainer.innerHTML += `<div class="tweetBlock">
       <div class="d-flex">
-        <img src="${tweet.user.profile_image_url_https}" alt="Avatar" class="avatar">
+        <img src="${tweet.user.profile_image_url}" alt="Avatar" class="avatar">
         <div class="nextToAvatar d-flex flex-column">
           <div class="twoLine d-flex">
             <p><b>${tweet.user.name}</b></p>

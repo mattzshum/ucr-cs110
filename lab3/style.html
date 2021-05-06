@@ -2,10 +2,11 @@
 <html>
 
 <head>
-  <title>Lab 1 - Nicole Nguyen</title>
+  <title>Lab 3 - Nicole Nguyen, Matthew Shum</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://kit.fontawesome.com/948d5d1a28.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -71,6 +72,12 @@
 
     <!-- CENTER COLUMN -->
     <div id="contentCenter" class="bg-light" role="main">
+      <div class="search d-flex justify-content-sm-between bg-light">
+        <div id="searchHolder d-flex justify-content-center align-items-center">
+          <div class="fa fa-search"></div>
+          <input id="searchBar" placeholder="Search" type="search">
+        </div>
+        <button id="timer-button" class="pause-unpause-feed-button" onclick=pauseUnpause()><span class="fas fa-pause" aria-hidden="true"></span></button>
       <!-- <div class="tweetBlock">
         <div class="d-flex">
           <img src="images/ratatouille.jpg" alt="Avatar" class="avatar">
@@ -160,7 +167,8 @@
     </div>
   </div>
 
-  <script src="nicole.js"></script>
+  <!-- <script src="nicole.js"></script> -->
+  <script src="test.js"></script>
 </body>
 
 </html>
