@@ -53,8 +53,14 @@
        </table>
 
       </div>
-      <input id="searchBar" type="search" placeholder="Search in tweets">
-      <div class='tweet-list' role="main" id='tweet-list'>
+      <input id="searchBar" type="search" placeholder="Search in tweets"></input>
+      <div class='tweet-list' role="main">
+        <div class='tweet'>
+          <p class="leftalign"><img src='./images/ratatouille.jpg' class="tweet-profile" alt='profile-rat'></p>
+          <p class="leftalign">&nbsp;<b>Remy</b> @remy Nov 19 <br/> &nbsp;I'm taking this class called CS110 and the TA's are <b>cool</b>! </p>
+        </div>
+        <div style="clear: both;"></div>
+        
         <div class='tweet'>
           <p class="leftalign"><img src='./images/ratatouille.jpg' class="tweet-profile" alt='profile-rat'></p>
           <p class="leftalign"> &nbsp;<b>Remy</b> @remy Nov 19 <br/> &nbsp;It's 2007. You just got home from elementary school. Your <br/>mom has pizza bagels in the oven. Ratatouille is in theaters. <br/>Life is good </p>
@@ -86,15 +92,13 @@
         </div>
         <div style="clear: both;"></div>
         <hr>
-      </div>
-      <div class='follow-recommendation'>
-        <p class="leftalign"><img src='./images/ratatouille.jpg' class="ratv2-profile" alt='profile-ratv2'></p>
-        <p class="leftalign"><b>Remy-v2</b> @remyv-2 <br/>&nbsp;&nbsp;<button class="button2">Follow</button ></p>
-      </div> 
-      <div class='refresh-button'>
+       <div class='follow-recommendation'>
+          <p class="leftalign"><img src='./images/ratatouille.jpg' class="ratv2-profile" alt='profile-ratv2'></p>
+          <p class="leftalign"><b>Remy-v2</b> @remyv-2 <br/>&nbsp;&nbsp;<button class="button2">Follow</button ></p>
+        </div> 
         <button class='pause-unpause-feed-button' id='timer-button' onclick=pauseUnpause()>resume feed</button>
+  </div>
       </div>
-    </div>2
-    <script src='main.js'></script>
+    </div>
   </body>
 </html>
