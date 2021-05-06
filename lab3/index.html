@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--Matthew Shum & Shana Tirtawidjaja-->
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel='secondary-stylesheet' integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css" rel='primary-stylesheet'>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id='navbar-class' role="navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContents" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContents">
+          <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">Moments</a>
+              <a class="nav-item nav-link" href="#">Notifications</a>
+              <a class='nav-item nav-link' href='#'>Messages</a>
+          </div>
+          <div class='logo'>
+            <img src='./images/twitter-logo.png' id ='twitter-logo' alt='twitter-logo'>
+          </div>
+          <div class='tweet-button'>
+            <button class="button1">Tweet</button>
+          </div>
+      </div>
+    </nav>
+    <div class='mainpage-container'>
+      <div class='user-info'>
+        <div class='banner-container'><img src='./images/ratatouille-banner.png' class="banner" alt='ratatouille-banner'></div>
+        <div>
+         <p class="leftalign"><img src='./images/ratatouille.jpg' class="profile" alt='profile-rat'></p>
+         <p class="centeralign"><b><u>Remy</u> </b><br/> @remy</p>
+        </div>
+        <div style="clear: both;"></div>
+
+        <table cellpadding="8" class='profile-data'>
+          <thead >
+             <tr>
+                <th>Tweets</th>
+                <th>Following</th>
+                <th>Followers</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr>
+                <td>5049</td>
+                <td>324</td>
+                <td>809</td>
+             </tr>
+          </tbody>
+       </table>
+
+      </div>
+      <input id="searchBar" type="search" placeholder="Search in tweets">
+      <div class='tweet-list' role="main" id='tweet-list'>
+        <div class='tweet'>
+          <p class="leftalign"><img src='./images/ratatouille.jpg' class="tweet-profile" alt='profile-rat'></p>
+          <p class="leftalign"> &nbsp;<b>Remy</b> @remy Nov 19 <br/> &nbsp;It's 2007. You just got home from elementary school. Your <br/>mom has pizza bagels in the oven. Ratatouille is in theaters. <br/>Life is good </p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class='tweet'>
+          <p class="leftalign"><img src='./images/ratatouille.jpg' class="tweet-profile" alt='profile-rat'></p>
+          <p class="leftalign">&nbsp;<b>Remy</b> @remy Nov 19 <br/> &nbsp;Let's make some pasta! </p>
+        </div>
+        <div style="clear: both;"></div>
+        
+        <div class='tweet'>
+          <p class="leftalign"><img src='./images/ratatouille.jpg' class="tweet-profile" alt='profile-rat'></p>
+          <p class="leftalign">&nbsp;<b>Remy</b> @remy Nov 19 <br/> &nbsp;Let's make some pasta! </p>
+        </div>
+        <div style="clear: both;"></div>
+        
+        <div class='tweet'>
+          <p class="leftalign"><img src='./images/ratatouille.jpg' class="tweet-profile" alt='profile-rat'></p>
+          <p class="leftalign">&nbsp;<b>Remy</b> @remy Nov 19 <br/> &nbsp;Let's make some pasta! </p>
+        </div>
+        <div style="clear: both;"></div>
+      </div>
+      <div class='follow-list'>
+        <p class='follow-title'><b>Who to follow</b></p>
+        <div class='follow-recommendation'>
+          <p class="leftalign"><img src='./images/linguini.png' class="linguini-profile" alt='profile-linguini'></p>
+          <p class="leftalign"><b>Linguini</b> @linguini <br/> &nbsp;&nbsp;<button class="button2">Follow</button></p>
+        </div>
+        <div style="clear: both;"></div>
+        <hr>
+      </div>
+      <div class='follow-recommendation'>
+        <p class="leftalign"><img src='./images/ratatouille.jpg' class="ratv2-profile" alt='profile-ratv2'></p>
+        <p class="leftalign"><b>Remy-v2</b> @remyv-2 <br/>&nbsp;&nbsp;<button class="button2">Follow</button ></p>
+      </div> 
+      <div class='refresh-button'>
+        <button class='pause-unpause-feed-button' id='timer-button' onclick=pauseUnpause()>resume feed</button>
+      </div>
+    </div>2
+    <script src='main.js'></script>
+  </body>
+</html>

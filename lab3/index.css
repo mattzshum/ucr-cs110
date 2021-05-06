@@ -1,0 +1,161 @@
+/* Feel free to edit CSS of body if you'd like. We provide you the light gray background color and font family in the body styling */
+/* Matthew Shum & Shana Tirtawidjaja */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  background-color: #e6ecf0;
+}
+
+ul{
+  list-style:none;
+}
+
+#navbarContents{
+  position:fixed;
+  display:inline-flex;
+  justify-content: space-evenly;
+  top:0;
+  right:0;
+  left:0;
+  height:46px;
+  z-index:100;
+  background-color:white;
+}
+
+#searchBar{
+  position:absolute;
+}
+
+#twitter-logo{
+  height:20px;
+  width:auto;
+}
+
+.banner-container{
+  background-color:black;
+  min-height:100px;
+  align-items:center;
+  text-align:center;
+}
+.banner{
+  width:80%;
+  height:auto;
+  z-index:1;
+  padding-top:5%;
+}
+.button1 {
+  background-color: #4AB3F4; 
+  color: white; 
+  border: 2px solid  white;
+  border-radius: 12px;
+}
+.profile{
+  position:relative;
+  top:-30px;
+  left:10px;
+  z-index:2;
+  width:60px;
+  height:auto;
+  border-radius:50%;
+}
+.profile-data{
+  position:relative;
+  top:-15px;
+}
+
+th{
+  color:#657786;
+}
+
+td{
+  color:#1DA1F2;
+}
+
+.user-info{
+  position:relative;
+  background-color:white;
+  width:290px;
+  height:100%;
+}
+
+.tweet-list{
+  width:610px;
+  background-color:white;
+  height:auto;
+  padding-left:10px;
+  padding-right:10px;
+}
+.tweet{
+  border-bottom: 1px solid #e6ecf0;
+  min-height: 51px;
+  height:auto;
+}
+
+.hr{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  
+  background-color:#e6ecf0 ;
+
+}
+.tweet-profile{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+}
+.user-info-stats{
+  list-style:none;
+  display:inline-flex;
+  justify-content:space-between;
+}
+
+.linguini-profile{
+  width:60px;
+  height:auto;
+  border-radius:50%;
+}
+.ratv2-profile{
+  width:60px;
+  height:auto;
+  border-radius:50%;
+}
+.centeralign{
+  margin: 0 auto;
+  width: 70px;
+}
+.leftalign{
+  float: left;
+}
+
+.follow-list{
+  width:290px;
+  background-color: white;
+  height:100%;
+}
+@media screen and (max-width: 1200px) {
+  div.follow-list {
+    display: none;
+  }
+}
+.follow-recommendation{
+  background-color:white;
+}
+.button2 {
+  background-color: white; 
+  color: #4AB3F4; 
+  border: 2px solid  #4AB3F4;
+  border-radius: 12px;
+}
+
+.mainpage-container{
+  max-width:1190px;
+  margin: 56px auto;
+  padding-top:10px;
+  display:flex;
+  justify-content:center;
+}
+
+/* TODO: Create CSS for your Twitter Mockup */
