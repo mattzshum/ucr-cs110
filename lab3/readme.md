@@ -10,6 +10,7 @@ Our implementation removes duplicates by mapping the tweet id's into a dict, the
 * Refreshing starts the page off again at 10 new tweets
 
 ## Search
+Search is implemented by adding an eventListener to a searchbar. On every user input, all tweets are deleted (for simplicity), and the dictionary of all tweets is iterated through. Tweets that contain the keyword are then re-implemented into the page. 
 
 ## Sorting and displaying the tweets
 The page displays 10 initial tweets as a starting point to view the main fetch instruction of the lab. They should already be sorted newest to oldest, and is logged onto the console. View them from items[1].created_at. Every time the page refreshes or adds more tweets, they will all be sorted automatically. The dict is turned into a sorted array every time more tweets are appended to it, and the innerHTML is reset to empty before displaying the entire array with new tweets.
