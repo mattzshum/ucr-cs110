@@ -1,0 +1,204 @@
+/* Feel free to edit CSS of body if you'd like. We provide you the light gray background color and font family in the body styling */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  background-color: #e6ecf0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  #contentRight {
+    display: none;
+  }
+}
+
+/* TODO: Create CSS for your Twitter Mockup */
+#wrapper {
+  max-width: 1190px;
+  margin: 56px auto;
+  padding: 10px;
+}
+
+.leftNav {
+  width: 50%;
+}
+
+.navbar {
+  padding-bottom: 0px;
+  align-items: center;
+}
+
+.navbarHeaders {
+  margin-left: 20px;
+}
+
+.nav-link {
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.navbar-brand {
+  padding-bottom: 15px;
+}
+
+a.nav-link:hover {
+  color: #4AB3F4 !important;
+  border-bottom: 2px solid #4AB3F4 !important;
+}
+
+.navbar-expand .navbar-nav .nav-link {
+  padding-right: 1.1rem;
+  padding-left: 1.1rem;
+}
+
+#twitterLogo {
+  width: 24px;
+}
+
+.headerRight {
+  float: right;
+  margin-right: 20px;
+  padding-bottom: 7px;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+#profile {
+  width: 75px;
+  height: 75px;
+  border: 1px solid white;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#contentLeft {
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  max-height: 250px;
+  margin-right: 10px;
+}
+
+#contentCenter {
+  max-width: 560px;
+}
+
+#contentRight {
+  max-width: 290px;
+  padding: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  max-height: 270px;
+}
+
+.bannerColumn {
+  width: 100%;
+  background-color: black;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bannerImg {
+  /* border-top: 25px solid black;
+  border-bottom: 25px solid black; */
+  /* border-right: 45px solid black;
+  border-left: 45px solid black; */
+  width: 200px; 
+  margin-right: 45px;
+  margin-left: 45px;
+}
+
+#profileImgAndName {
+  z-index: 3;
+  max-height: 80px;
+  margin-top: -20px;
+  /* border: 1px solid red; */
+}
+
+#profileDetails {
+  margin-top: 20px;
+}
+
+.profileName {
+  margin-bottom: -5px;
+  margin-top: 10px;
+}
+
+#statsBox {
+  width: inherit;
+  justify-content: space-evenly;
+  font-size: medium;
+  padding-top: 10px;
+}
+
+.statTitle {
+  color: #66767f;
+ font-weight: bold;
+}
+
+.statNumber {
+  color: #60bcf5;
+  font-weight: bold;
+}
+
+.tweetBlock {
+  border-bottom: 1px solid #e6ecf0;
+  min-height: 50px;
+  padding: 20px 20px 0px 20px;
+}
+
+.tweetInfo {
+  color: gray;
+  margin-left: 5px;
+}
+
+.nextToAvatar {
+  margin-left: 10px;
+}
+
+.twoLine p {
+  margin-bottom: 0px;
+}
+
+.whoToFollowText p {
+  margin-bottom: 10px;
+}
+
+.whoToFollow {
+  border-bottom: 1px solid #e6ecf0;
+  min-height: 45px;
+  padding: 10px 10px 20px 10px;
+  /* width: 100%; */
+  width: 290px;
+} 
+/* hardcode widths of left and right columns */
+
+button {
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #4AB3F4;
+  border: 1px solid #4AB3F4;
+  max-width: 100px;
+}
+
+.buttonTweet {
+  background-color: #4AB3F4;
+  color: white;
+  font-weight: bold;
+  right: 0;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lab 1 - Nicole Nguyen</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <!-- TODO: Create HTML elements for Twitter mockup inside body -->
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between" role="navigation">
+      <div class="leftNav d-flex justify-content-lg-between">
+        <div class="navbarHeaders32">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Moments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Notifications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Messages</a>
+            </li>
+          </ul>
+        </div>
+        <a class="navbar-brand" href="#wrapper"><img src="images/twitter-logo.png" alt="Twitter Logo" id="twitterLogo"></a>
+      </div>
+      <div class="headerRight align-items-end">
+        <button class="buttonTweet align-end">Tweet</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- WRAPPER -->
+  <div id="wrapper" class="d-flex justify-content-center">
+    <!-- LEFT COLUMN -->
+    <div id="contentLeft" class="d-flex flex-column bg-light">
+      <div class="bannerColumn">
+        <img src="images/ratatouille-banner.png" alt="Banner" id="bannerImg">
+      </div>
+      <div id="profileImgAndName" class="d-flex">
+        <img src="images/ratatouille.jpg" alt="Avatar" class="avatar" id="profile">
+        <div id="profileDetails" class="d-flex flex-column">
+          <p class="profileName"><b><u>Remy</u></b></p>
+          <p class="text-secondary">@remy</p>
+        </div>
+      </div>
+      <div id="statsBox" class="d-flex">
+        <div>
+          <p class="statTitle">Tweets</p>
+          <p class="statNumber">5049</p>
+        </div>
+        <div>
+          <p class="statTitle">Following</p>
+          <p class="statNumber">324</p>
+        </div>
+        <div>
+          <p class="statTitle">Followers</p>
+          <p class="statNumber">809</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER COLUMN -->
+    <div id="contentCenter" class="bg-light" role="main">
+      <!-- <div class="tweetBlock">
+        <div class="d-flex">
+          <img src="images/ratatouille.jpg" alt="Avatar" class="avatar">
+          <div class="nextToAvatar d-flex flex-column">
+            <div class="twoLine d-flex">
+              <p><b>Remy</b></p>
+              <p class="tweetInfo">@remy Nov 19</p>  
+            </div>
+            <p>I'm taking this class called CS 110 and the TAs are all so <span style="font-weight:bold;">cool</span>!</p>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="tweetBlock">
+        <div class="d-flex">
+          <img src="images/ratatouille.jpg" alt="Avatar" class="avatar">
+          <div class="nextToAvatar d-flex flex-column">
+            <div class="twoLine d-flex">
+              <p><b>Remy</b></p>
+              <p class="tweetInfo">@remy Nov 19</p>  
+            </div>
+            <p>It's 2007. You just got home from elementary school. Your mom has pizza bagels in the oven. Ratatouille is in
+            theaters. Life is good</p>
+          </div>
+        </div>
+      </div>
+      <div class="tweetBlock">
+        <div class="d-flex">
+          <img src="images/ratatouille.jpg" alt="Avatar" class="avatar">
+          <div class="nextToAvatar d-flex flex-column">
+            <div class="twoLine d-flex">
+              <p><b>Remy</b></p>
+              <p class="tweetInfo">@remy Nov 19</p>  
+            </div>
+            <p>Lets make some pasta!</p>
+          </div>
+        </div>
+      </div>
+      <div class="tweetBlock">
+        <div class="d-flex">
+          <img src="images/ratatouille.jpg" alt="Avatar" class="avatar">
+          <div class="nextToAvatar d-flex flex-column">
+            <div class="twoLine d-flex">
+              <p><b>Remy</b></p>
+              <p class="tweetInfo" id="tweetInfo">@remy Nov 19</p>  
+            </div>
+            <p>Let's make some pasta!</p>
+          </div>
+        </div>
+      </div>
+      <div class="tweetBlock">
+        <div class="d-flex">
+          <img src="images/ratatouille.jpg" alt="Avatar" class="avatar">
+          <div class="nextToAvatar d-flex flex-column">
+            <div class="twoLine d-flex">
+              <p><b>Remy</b></p>
+              <p class="tweetInfo">@remy Nov 19</p>  
+            </div>
+            <p>Lets make some pasta!</p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div id="contentRight" class="bg-light">
+      <h5>Who to follow</h5>
+      <div class="whoToFollow d-flex">
+        <img src="images/linguini.png" alt="Avatar" class="avatar">
+        <div class="nextToAvatar d-flex flex-column">
+          <div class="whoToFollowText d-flex">
+            <p><b>Linguini</b></p>
+            <p class="tweetInfo">@linguini</p>
+          </div>
+          <button>Follow</button>
+        </div>
+      </div>
+      <div class="whoToFollow d-flex">
+        <img src="images/ratatouille.jpg" alt="Avatar" class="avatar">
+        <div class="nextToAvatar d-flex flex-column">
+          <div class="whoToFollowText d-flex">
+            <p><b>CS 110 TA</b></p>
+            <p class="tweetInfo">@cs</p>
+          </div>
+          <button>Follow</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="nicole.js"></script>
+</body>
+
+</html>
