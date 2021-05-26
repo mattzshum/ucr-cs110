@@ -2,7 +2,7 @@
 
 
 function getMessage(request, response){
-    response.render('message', {title:'message'});
+    response.render('message', {title:'message', msgName: requrest.params.msgName, isAvailable: true});
 }
 
 module.exports = {
