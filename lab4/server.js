@@ -11,6 +11,7 @@ const Message = require('./models/Message');
 // import handlers
 const homeHandler = require('./controllers/home.js');
 const roomHandler = require('./controllers/room.js');
+const messageHandler = require('./controllers/Message');
 
 const app = express();
 const port = 8080;
@@ -63,18 +64,19 @@ MESSAGE APIs
 */
 app.post("/message/create", function(req, res){
     const newMessage = new Message({
-        name:req.body.messageName,
-        username:body.username,
+        roomName: req.body.roomName,
+        username:req.body.username,
         contents:req.body.messageContent
     })
     newMessage.save().then(console.log("Message recorded"))
     .catch(error => console.log(error))
 })
-app.get("/messages", function(req, res){
+app.get("/:roomName/messages", function(req, res){
     Message.find().lean().then(items => {
         res.json(items)
     })
 })
+app.get("/:roomName/messages", messageHandler.getMessage);
 
 
 // NOTE: This is the sample server.js code we provided, feel free to change the structures
