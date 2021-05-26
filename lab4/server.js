@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const config = require('config');
 const path = require('path');
 const Room = require('./models/Rooms');
+const Message = require('./models/Message');
 
 // import handlers
 const homeHandler = require('./controllers/home.js');
@@ -38,6 +39,10 @@ app.set('view engine', 'hbs');
 // TODO: Add server side code
 
 // Create controller handlers to handle requests at each endpoint
+
+/*
+ROOM APIs
+*/
 app.post("/create", function(req, res){
     const newRoom = new Room({
         name: req.body.roomName
@@ -49,10 +54,28 @@ app.get("/getroom", function(req, res){
     Room.find().lean().then(items => {
         res.json(items)
     })
-
 })
 app.get('/', homeHandler.getHome);
 app.get('/:roomName', roomHandler.getRoom);
+
+/*
+MESSAGE APIs
+*/
+app.post("/message/create", function(req, res){
+    const newMessage = new Message({
+        name:req.body.messageName,
+        username:body.username,
+        contents:req.body.messageContent
+    })
+    newMessage.save().then(console.log("Message recorded"))
+    .catch(error => console.log(error))
+})
+app.get("/messages", function(req, res){
+    Message.find().lean().then(items => {
+        res.json(items)
+    })
+})
+
 
 // NOTE: This is the sample server.js code we provided, feel free to change the structures
 
