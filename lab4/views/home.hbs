@@ -1,19 +1,18 @@
-<div class="posts">
-    <div class="row justify-content-center">
-        <div class="col-lg-7" style="margin-top: 50px;">
-            <div class="card">
+<h1> Home </h1>
+<p>This is the {{ title }} page</p>
+{{#if isAvailable}}
+<ul>
+    {{#each rooms}}
+         <li> <a href={{this.name}}> {{this.name}}  </a></li>
+    {{/each}}
+</ul>
+{{/if}}
 
-                <img src="{{post.image}}"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Posted by {{post.author}}</h5>
+<form action="/create" method="POST">
+<input type="text" name="roomName" placeholder="enter room name"/>
+<input type="submit" value="create room"/> 
+</form>
 
-                    <ul class="list-group">
-                        <li class="list-group-item">This is suppose to be a comment</li>
-                        <li class="list-group-item">This is suppose to be a comment</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{{!-- <script>
+    fetch("http://localhost:8080/getRoom").then()
+</script> --}}
