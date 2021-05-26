@@ -13,6 +13,27 @@
 <input type="submit" value="create room"/> 
 </form>
 
-{{!-- <script>
-    fetch("http://localhost:8080/getRoom").then()
-</script> --}}
+<script>
+    let interval = setInterval(refreshPage, 1000);
+
+    function refreshPage() {
+    fetch("http://localhost:8080/getRoom")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+            refresh(data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
+    function refresh(room) {
+        document.getElementsByTagName('ul').innerHTML = "";
+
+        for (var i = 0; i < room.length; ++i) {
+            console.log(room[i].name);
+            document.getElementsByTagName('ul').innerHTML += `<li> <a href={{this.name}}> {{this.name}}  </a></li>`;
+        }
+    }
+</script>
