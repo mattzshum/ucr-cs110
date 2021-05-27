@@ -10,30 +10,51 @@
 
 <form action="/create" method="POST">
 <input type="text" name="roomName" placeholder="enter room name"/>
-<input type="submit" value="create room"/> 
+<input type="submit" value="create room" onclick="window.location.reload()"/> 
 </form>
 
 <script>
-    let interval = setInterval(refreshPage, 1000);
+    let interval = setInterval(renderRooms, 1000);
 
-    function refreshPage() {
+    function renderRooms() {
     fetch("http://localhost:8080/getRoom")
         .then(res => res.json())
         .then(data => {
-            // console.log(data);
-            refresh(data);
+            console.log(data);
+            
+            let list = document.getElementsByTagName('ul')[0];
+            list.innerHTML = "";
+            
+            data.map(i => {
+                console.log(i.name);
+                let newItem = document.createElement('li');
+                newItem.innerHTML = `<a href=${i.name}> ${i.name}  </a>`;
+                list.appendChild(newItem);
+            })
+
+            // refresh(data);
         })
         .catch(err => {
             console.log(err);
         })
     }
 
-    function refresh(room) {
-        document.getElementsByTagName('ul').innerHTML = "";
+    // function refresh(room) {
+       // document.getElementsByTagName('ul')[0].innerHTML = "";
 
-        for (var i = 0; i < room.length; ++i) {
-            console.log(room[i].name);
-            document.getElementsByTagName('ul').innerHTML += `<li> <a href={{this.name}}> {{this.name}}  </a></li>`;
-        }
+        // for (var i = 0; i < room.length; ++i) {
+            // console.log(room[i].name);
+           // console.log(document.getElementsByTagName('ul')[0]);
+        //}
+
+        // document.getElementsByTagName('ul')[0].innerHTML += "{{#each rooms}}";
+
+        // for (var i = 0; i < room.length; ++i) {
+            // console.log(room[i].name);
+           // console.log(document.getElementsByTagName('ul')[0]);
+           // document.getElementsByTagName('ul')[0].innerHTML +=
+        // }
+        // document.getElementsByTagName('ul')[0].innerHTML += "{{/each}}";
     }
+    
 </script>

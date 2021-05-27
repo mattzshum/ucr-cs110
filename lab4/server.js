@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const config = require('config');
 const path = require('path');
 const Room = require('./models/Rooms');
-const Message = require('./models/Message');
+const Message = require('./models/Messages');
 
 // import handlers
 const homeHandler = require('./controllers/home.js');
