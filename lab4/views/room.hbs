@@ -8,6 +8,7 @@
 <form action"/createMessage" method="POST" id="newMessage">
     <input type='text' name='messageContent'> <!-- user enters message here -->
     <input name='roomName' type='hidden' value={{roomName}} /> <!-- how we pass the room name to the API (submits to only one room, not all) -->
+    <input type="submit" value="send message"/>
 </form>
 
 <script>
@@ -15,9 +16,26 @@
     var submission = document.getElementById('newMessage'); // accessing the form from above
 
     //create another input element in the form submission (username)
-    usernameInput = document.createElement('input');
+    let usernameInput = document.createElement('input');
     usernameInput.setAttribute('name', 'username');
     usernameInput.setAttribute('type', 'hidden'); //do not want user to see this in frontend
     usernameInput.setAttribute('value', userName);
     submission.appendChild(usernameInput); //append Child to the form above so that on submission, the username is now passed to the API
+</script>
+
+<script>
+    let interval = setInterval(renderMessages, 1000);
+
+    function renderMessages() {
+    fetch("/:roomName/messages")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+
+            // let messages = document.getElementsByTagName('p')[1];
+
+            // let list = document.getElementsByTagName('p')[2];
+            // list.innerHTML = "";
+        })
+    }
 </script>
