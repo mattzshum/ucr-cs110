@@ -6,5 +6,18 @@
 <p>To generate a new room, here is the room id: {{ newRoomId }}</p>
 
 <form action"/createMessage" method="POST" id="newMessage">
-    <input>
+    <input type='text' name='messageContent'> <!-- user enters message here -->
+    <input name='roomName' type='hidden' value={{roomName}} /> <!-- how we pass the room name to the API (submits to only one room, not all) -->
 </form>
+
+<script>
+    var userName = prompt("Enter uName: ");
+    var submission = document.getElementById('newMessage'); // accessing the form from above
+
+    //create another input element in the form submission (username)
+    usernameInput = document.createElement('input');
+    usernameInput.setAttribute('name', 'username');
+    usernameInput.setAttribute('type', 'hidden'); //do not want user to see this in frontend
+    usernameInput.setAttribute('value', userName);
+    submission.appendChild(usernameInput); //append Child to the form above so that on submission, the username is now passed to the API
+</script>
